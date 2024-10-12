@@ -7,7 +7,7 @@ def greedyNumber(arr:list[int])->int: #max profit
         max_num=max(i-min_num,max_num)
     return(max_num)
 
-def kadunaAlg(arr: list[int]) -> int: # max subproduct
+def kadunaAlg(arr: list[int]) -> int: # max sum of subproduct
     if len(arr) == 0:
         return 0
     max_so_far=float('-inf')
@@ -15,7 +15,6 @@ def kadunaAlg(arr: list[int]) -> int: # max subproduct
     for i in arr:
         max_ending_here+=i
         if max_ending_here>max_so_far: max_so_far=max_ending_here
-        
         if max_ending_here<=0: max_ending_here=0
     return max_so_far
 

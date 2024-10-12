@@ -18,7 +18,9 @@ peek_element=list1[1]  # =1 ->O(1) list
 # Array
 array1= arr.array('i',[1,2,3,4,5]) # Only allow homogeneous data types: Access avg = Avg O(1)
 peek_el=array1[1] # -> O(1)
-array1.append(1)
+array1.append(1) # -> O(1)
+array1.remove(1) # removes the first element=1 that appears -> O(1)
+array1.pop(0) #removes the firs element -> O(1)
 
 # Queue: FIFO Principle 
 queue=deque()
@@ -50,8 +52,7 @@ a, b, c, d, e = tuple2 #must have same number of variables as elements
 Set = set([1, 2, 'Geeks', 4, 'For', 6, 'Geeks']) #can use {1, 2, 'Geeks', 4, 'For', 6, 'Geeks'}
 Set.add(30) # Adds in the back like append in stacks: O(1)
 Set.remove(30) # Removes if element exists, and raise error if it doesn't exists: O(1)
-Set.discard(30) # Remove if element exists, and DOES NOT raise error if it doesn't exists: O(1)
-
+Set.discard(30) # Remove if element exists, and DOES NOT raise error if it doesn't exists: O(1) 
 new_set={1,25}
 
 combined_sets=Set.union(new_set) # sorts it: -> O(len(Set)+len(new_set))
