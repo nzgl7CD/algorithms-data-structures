@@ -1,3 +1,9 @@
+'''
+- For access: always try to use array (numpy or array)
+- For push/pop: Tru to use Stack, dictionary or set
+'''
+
+
 import array as arr
 from collections import deque
 
