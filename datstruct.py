@@ -20,7 +20,7 @@ array1= arr.array('i',[1,2,3,4,5]) # Only allow homogeneous data types: Access a
 peek_el=array1[1] # -> O(1)
 array1.append(1) # -> O(1)
 array1.remove(1) # removes the first element=1 that appears -> O(1)
-array1.pop(0) #removes the firs element -> O(1)
+array1.pop(0) #removes and return the firs element -> O(1)
 
 # Queue: FIFO Principle 
 queue=deque()
@@ -28,6 +28,7 @@ queue.append(1)
 queue.append(2) # -> O(1)
 first_element=queue.popleft() # Remove element from front of queue -> O(1)
 first_element=queue[0] # Peek first element -> O(1)
+
 
 # Dictionaries
 dict={'Name': 'Seb', 1: [1,2,3,4]}
@@ -70,13 +71,57 @@ diff=f_set.difference(n_set) # we can do the same as we do with sets but not cha
 #String
 string="Algdat practice"
 first_letter=string[0] # ->O(1)
-slice_string=string[1:3] # -> O(k)
+slice_string=string[1:3] # -> O(k) also [start:stop:step]
 
 new_string=string+" is fun" # -> O(n)
 length=len(string) # -> O(1)
 
 find_letter=string.find('Algdat') # -> O(m*n), where n=len(string) and m=len('Algdat')
 is_in= 'A' in string # Bool output: -> O(n)
+
+s='b'
+order=ord(s) - ord('a') + 1 # return 2 as b is the second letter in the alphabet
+
+orderlist=[ord(char.lower()) - ord('a') + 1 for char in s if char.isalpha()]
+
+# print(ord('5')-ord('0'))
+
+
+
+#Bits
+a = 10 #int 0b1010
+b = 3  #int 0b0011
+and_result = a & b # =0b0010 as an int (2): doesn't work with bin(10) as this gives a string
+
+bin_and_result=bin(and_result)
+
+or_result= a|b # one of or both 
+
+xor_result=a^b # =0b1001 only one of them but not both
+
+not_result=~b # reverse all bins
+
+multiply_val=a<<1 # multiply by 2^1 
+multiply_val_val=a<<2 # multiply by 2^2
+
+divide_val=a>>1 # dive by 2^1
+divide_val=a>>2 # divide by 2^2 (4)
+
+a |= (1 << 2) # sets the second bit to 1 = 0b1110 
+a &= ~(1 << 2) # reverse the second bit to 0 = 0b1010
+
+is_set = (a & (1 << 1)) != 0
+a&=~(1) #makes any number pair
+
+a ^= b # reduce a with what only b has in bits 
+
+
+
+
+
+
+
+
 
 
 
