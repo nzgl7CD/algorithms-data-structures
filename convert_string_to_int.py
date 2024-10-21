@@ -10,3 +10,4 @@ def from_str_to_int(s:str)->int:
         
     return is_negative*result
         
+print(from_str_to_int('-455'))
