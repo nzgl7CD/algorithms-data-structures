@@ -10,6 +10,7 @@ linked lists are not stored in contiguous memory locations.
 - Sequential access: Nodes can only be accessed sequentially, starting from the head of the list.
 
 '''
+
 class Node:
     def __init__(self, data):
         self.data=data
@@ -46,7 +47,6 @@ class LinkedList:
             previous.next=current_node.next
     
     def search_linked_list(head, target):
-
         # Traverse the Linked List
         while head is not None:
             # Check if the current node's data matches the target value
