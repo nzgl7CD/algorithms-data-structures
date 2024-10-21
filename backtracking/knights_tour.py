@@ -1,6 +1,8 @@
+'''
+Backtracking algorithm is derived from the Recursion algorithm, with the option to revert if a recursive solution fails
+'''
+
 n = 8
-
-
 def isSafe(x, y, board):
     '''
         A utility function to check if i,j are valid indexes 
