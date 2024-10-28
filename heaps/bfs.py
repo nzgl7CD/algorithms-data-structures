@@ -6,7 +6,8 @@ def bfs(adj, s):
     # Create a queue for BFS
     q = deque()
 
-    visited = [False] * len(adj);
+    visited = [False] * len(adj); #; used for several statement in teh same line?
+    
 
     # Mark the source node as visited and enqueue it
     visited[s] = True
