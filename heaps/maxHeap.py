@@ -1,3 +1,6 @@
+'''
+A node is larger og equal to its child nodes
+'''
 import heapq
 
 # Create an empty max-heap

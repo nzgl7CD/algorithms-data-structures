@@ -1,8 +1,10 @@
+'''
+A node is smaller og equal to its child nodes
+'''
+
 import heapq
 
-# Heap Sort: Can sort an iterable in O(n*logn) time complexity. 
 
-# empty heap
 min_heap = []
 
 # push nodes
@@ -23,7 +25,7 @@ heapq.heappush(min_heap, 5)
 print("Heap after pushes:", min_heap)
 
 # Accessing the smallest element
-smallest = min_heap[0]
+smallest = min_heap[0] #O(1) always
 print("Smallest element:", smallest)
 
 # Removing the smallest element
