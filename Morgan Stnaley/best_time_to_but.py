@@ -16,7 +16,7 @@ def maxProfit(arr:list[int])->int:
     lowest=float('inf')
     max_profit=0
     for i in arr:
-        if i < lowest: lowest=i; continue
+        lowest=min(i,lowest)
         max_profit=max(max_profit,i-lowest)
     return max_profit
 
