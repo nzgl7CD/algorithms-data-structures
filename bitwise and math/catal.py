@@ -8,3 +8,5 @@ def catalan(n):
     for i in range(n):
         res += catalan(i) * catalan(n-i-1)
     return res
+
+print(catalan(4))

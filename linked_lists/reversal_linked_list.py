@@ -3,11 +3,10 @@ from generate_list import LinkedList
 ll = LinkedList()
 
 # Add nodes to the linked list
-ll.insert_node(10)
-ll.insert_node(20)
-ll.insert_node(30)
+ll.append(10)
+ll.append(20)
+ll.append(30)
 
-ll.display(ll.get_head())  # Output: 10 -> 20 -> 30 -> None
 
 def reverse_list(head):
     if head is None or head.next is None:
@@ -18,7 +17,13 @@ def reverse_list(head):
     return remaining
 
 reversed_list=reverse_list(ll.get_head())
-ll.display(reversed_list) # Output: 30 -> 20 -> 10 -> None
+
+elements=[]
+current=reverse_list
+while current:
+    elements.append(str(current.data))
+    current=current.next
+print(''.join(elements))
 
 
 

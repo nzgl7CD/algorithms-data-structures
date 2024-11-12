@@ -7,6 +7,8 @@ class LinkedList:
     def __init__(self) -> None:
         self.head=None
     
+    def get_head(self):
+        return self.head
     # Add to the back
     def append(self, data):
         new_node=Node(data)

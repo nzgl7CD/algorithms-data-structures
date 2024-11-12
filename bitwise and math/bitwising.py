@@ -4,6 +4,7 @@ def count_set_bits(num):
         if num&1: counter+=1
         num>>=1
     return counter
+# print(count_set_bits(10))
 
 def is_odd(num:int)->bool:
     return num&1==1
@@ -17,18 +18,18 @@ def frombintoint(binstring:str):
     return int(binstring,2)
 
 def half_to(num:int)->int:
-    return num>>2
+    return num>>3
+# print(half_to(16))
 
 def make_pair(num:int)->int:
-    return (num&~1 if num&1==1 else num)
-
+    return ((num+1)&~1 if num&1==1 else num)
+# print(make_pair(1))
 
 def findPrime(num:int):
-    dividers=[i for i in range(1,int(num**0.5)+1)]
-    s=1
-    if num&1: 
-       s=2
-    return not any(num%i==0 for i in dividers[s::2]) 
+    dividers=[i for i in range(2,int(num**0.5)+1)]
+    sqrt=int(num**0.5+1)
+    return not any(num%i==0 for i in range(2,sqrt)) 
+# print(findPrime(7))
 
 def only_pairs(arr:list[int]):
     return set(filter(lambda x: not x&1, arr))
