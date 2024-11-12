@@ -48,4 +48,4 @@ def fromStrToInt(s:str):
     listOfNums=[ord(i) for i in s]
     return ''.join(chr(i) for i in listOfNums)
 
-    
+print(fromStrToInt('100'))

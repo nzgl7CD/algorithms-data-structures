@@ -11,7 +11,7 @@ class LinkedList:
     def append(self,data):
         new_node=Node(data)
         if not self.head: self.head=new_node; return
-        current_node=self.head #head -> [1 | next] -> [2 | next] -> [3 | next] -> [4 | NULL] -> NONE (Data|Next)
+        current_node=self.head #head -> [1 | next] -> [2 | next] -> [3 | next] -> [4 | NULL] -> NONE; (Data|Next)
         while current_node.next: #stops at the last node with a value, [4 | NULL]
             current_node=current_node.next
         current_node.next=new_node

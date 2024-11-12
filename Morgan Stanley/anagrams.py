@@ -25,4 +25,23 @@ def sort_anagrams(words:list[str]):
         else: sort_words[temp_word].append(word)
     return sort_words
 
-print(sort_anagrams(['text','xett','ttex','abc','cbc','cba']))
+
+
+def new_anagram_sorter(words:list[str]):
+    if not words: return
+    sorter={}
+    for word in words:
+        keyWord=''.join(sorted(word))
+        if keyWord in sorter: sorter[keyWord].append(word)
+        else: sorter[keyWord]=[word]
+    return sorter
+print(new_anagram_sorter(['text','xett','ttex','abc','cbc','cba']))
+
+def anagramUsingCollections(words:list[str]):
+    if not words: return 
+    defDict=collections.Counter()
+    for i in words:
+        defDict.update(sorted(i))
+    return defDict.most_common(1)[0][1]
+print(anagramUsingCollections(['text','xett','ttex','abc','cbc','cba']))
+
