@@ -3,7 +3,7 @@ class Solution:
         m={'2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv','9':'wxyz',}
         for i in m: m[i]=list(m[i])
         self.ans=[]
-        def foo(idx,curr): # 
+        def foo(idx,curr): 
             if idx==len(digits): 
                 self.ans.append(curr)
                 return

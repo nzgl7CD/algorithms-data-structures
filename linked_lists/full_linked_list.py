@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self,data) -> None:
         self.data=data
@@ -46,13 +45,11 @@ def reverse(head):
 def doubleReverse(head):
     if head is None or head.next is None:
         return head
-    
     curr = head
     while curr:
         # Swap the next and prev pointers for each node
         curr.prev, curr.next = curr.next, curr.prev
         curr = curr.prev  # Move to the next node (which is actually the previous node after swapping)
-
     # The new head will be the last node after reversal
     return head.prev
 
@@ -72,8 +69,6 @@ def intersectionNode(head1, head2):
         ptr1=ptr1.next if ptr1 else head2
         ptr2=ptr2.next if ptr2 else head1
     return ptr1
-    
-    
     
 llObj=LinkedList()
 llObj.append(1)
