@@ -57,6 +57,46 @@ plt.xlabel("Final Stock Price")
 plt.ylabel("Frequency")
 plt.show()
 
+def monte_carlo_greeks(S, K, T, r, sigma, n_simulations=100000, option_type='call'):
+    """Estimates Delta and Gamma using Monte Carlo."""
+    # Generate random paths for stock prices
+    Z = np.random.randn(n_simulations)  # Standard normal random variables
+    ST = S * np.exp((r - 0.5 * sigma**2) * T + sigma * np.sqrt(T) * Z)  # Simulated prices at maturity
+    
+    # Payoff calculation
+    if option_type == 'call':
+        payoffs = np.maximum(ST - K, 0)
+    elif option_type == 'put':
+        payoffs = np.maximum(K - ST, 0)
+    else:
+        raise ValueError("option_type must be 'call' or 'put'")
+    
+    # Discounted payoff
+    discounted_payoff = np.exp(-r * T) * payoffs
+    
+    # Delta estimation (numerical differentiation with small perturbation)
+    epsilon = 1e-4
+    S_up = S + epsilon
+    S_down = S - epsilon
+    
+    ST_up = S_up * np.exp((r - 0.5 * sigma**2) * T + sigma * np.sqrt(T) * Z)
+    ST_down = S_down * np.exp((r - 0.5 * sigma**2) * T + sigma * np.sqrt(T) * Z)
+    
+    if option_type == 'call':
+        payoff_up = np.maximum(ST_up - K, 0)
+        payoff_down = np.maximum(ST_down - K, 0)
+    elif option_type == 'put':
+        payoff_up = np.maximum(K - ST_up, 0)
+        payoff_down = np.maximum(K - ST_down, 0)
+    
+    discounted_payoff_up = np.exp(-r * T) * payoff_up
+    discounted_payoff_down = np.exp(-r * T) * payoff_down
+    
+    delta = (np.mean(discounted_payoff_up) - np.mean(discounted_payoff_down)) / (2 * epsilon)
+    gamma = (np.mean(discounted_payoff_up) - 2 * np.mean(discounted_payoff) + np.mean(discounted_payoff_down)) / (epsilon**2)
+    
+    return delta, gamma
+
 
 
 

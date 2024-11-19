@@ -5,3 +5,16 @@ def getIntersectionNode(headA, headB):
         ptr1=ptr1.next if ptr1 else headB
         ptr2=ptr2.next if ptr2 else headA
     return ptr1
+
+def getIntersectionNode(headA, headB):
+    first_set=set()
+    curr=headA
+    while curr:
+        first_set.add(curr)
+        curr=curr.next
+    curr = headB
+    while curr:
+        if curr in first_set:
+            return curr
+        curr=curr.next
+    return None

@@ -10,8 +10,15 @@ class LinkedList:
     def append(self,data):
         new_node=Node(data)
         if not self.head: self.head=new_node; return
+        #current_node=self.head works because in python, both variables refer to the same object in memory 
         current_node=self.head #head -> [1 | next] -> [2 | next] -> [3 | next] -> [4 | NULL] -> NONE; (Data|Next)
         while current_node.next: #stops at the last node with a value, [4 | NULL]
+            '''
+            Traversal:
+            When you iterate through the list using current_node = current_node.next, 
+            current_node starts as a reference to self.head and then moves to reference the next node in the chain. 
+            This allows traversal without altering the actual self.head
+            '''
             current_node=current_node.next
         current_node.next=new_node
     
@@ -43,8 +50,7 @@ def reverse(head):
     return rest
 
 def doubleReverse(head):
-    if head is None or head.next is None:
-        return head
+    if head is None or head.next is None: return head
     curr = head
     while curr:
         # Swap the next and prev pointers for each node
@@ -52,6 +58,14 @@ def doubleReverse(head):
         curr = curr.prev  # Move to the next node (which is actually the previous node after swapping)
     # The new head will be the last node after reversal
     return head.prev
+
+def intersectionNode(head1, head2):
+    if not head1 and not head2: return None
+    ptr1,ptr2=head1,head2
+    while ptr1!=ptr2:
+        ptr1=ptr1.next if ptr1 else head2
+        ptr2=ptr2.next if ptr2 else head1
+    return ptr1
 
 def displayRev(head):
     if not head: return 
@@ -62,13 +76,7 @@ def displayRev(head):
         curr=curr.next
     return ' -> '.join(elements)
 
-def intersectionNode(head1, head2):
-    if not head1 and not head2: return None
-    ptr1,ptr2=head1,head2
-    while ptr1!=ptr2:
-        ptr1=ptr1.next if ptr1 else head2
-        ptr2=ptr2.next if ptr2 else head1
-    return ptr1
+
     
 llObj=LinkedList()
 llObj.append(1)

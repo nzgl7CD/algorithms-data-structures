@@ -21,4 +21,3 @@ def maxProfit(arr:list[int])->int:
     return max_profit
 
 print(maxProfit([2,1,5,3,3]))
-    

@@ -12,7 +12,6 @@ print(twoSum([1,2,3,4],3))
 
 def sumTwo(arr,target):
     if not arr: return ()
-    
     checker={}
     for idx, val in enumerate(arr):
         temp=target-val
@@ -21,4 +20,13 @@ def sumTwo(arr,target):
     return ()
 
 print(sumTwo([1,2,3,4],7))
+
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        numToIndex = {}
+        for i in range(len(nums)):
+            if target - nums[i] in numToIndex:
+                return [numToIndex[target - nums[i]], i]
+            numToIndex[nums[i]] = i
+        return []
     

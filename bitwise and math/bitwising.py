@@ -3,11 +3,7 @@ def count_set_bits(num):
     while num:
         if num&1: counter+=1
         num>>=1
-    return counter
-# print(count_set_bits(10))
-
-def is_odd(num:int)->bool:
-    return num&1==1
+    return counter #returns number of 1s in the bin number
 
 def convert_from_string_to_bin(stri:str)->int:
     return int(stri[2:],2)
@@ -36,9 +32,7 @@ def only_pairs(arr:list[int]):
 
 
 def make_pairs(arr:list[int]):
-    return list(x & ~1 for x in arr)
-
-# print(make_pairs([1,2,3,4,7]))
+    return list(x & ~1 for x in arr) 
 
 def is_prime(num):
     if not num or num<=2: return
@@ -53,9 +47,12 @@ def sum_ints(a:int,b:int):
         carry = (a & b) << 1
         a = sum_without_carry
         b = carry
-        
     return a
-        
+
+
+def is_odd(num:int)->bool:
+    return num&1==1
+
 a=10 # 1010
 b=3 # 0011
 
