@@ -57,11 +57,16 @@ Note:
 15! = 1307674368000
 20! = 2432902008176640000
 '''
-
+print(np.log(1000))
 
 '''
-Number of prime numbers in a range: x//ln(x)
-Nth number in a fibonacci sequence 
+Number of prime numbers in a range: 
+x//ln(x)
+ln(10)=2.3
+ln(100)=4.6
+ln(1000)=6.9
+
+Nth number in a fibonacci sequence:
 Golden ratio: ø=(1+sqrt(5))/2
 Conjugate: v=(1-sqrt(5))/2    
 F(n)=(ø**n-v**n)/sqrt(5)
@@ -76,13 +81,13 @@ def nth_fib_number(n):
 
 def nth_fib_w_programmin(n):
     '''
-    Beter for larger numbers
+    Better for larger numbers
     '''
     a,b=0,1
     for i in range(n-1):
-        a,b=b,a+b
+        b,a=b+a,b
     return b
 
 print(nth_fib_number(10))
-print(nth_fib_w_programmin(10))
+print(nth_fib_w_programmin(3))
 
