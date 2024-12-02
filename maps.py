@@ -4,6 +4,7 @@ def depth_of_friends(my_dict,depth):
     If depth is 2 - you have to return the direct friends of the person plus the direct 
     friends of all of his direct friends.
     '''
+    
     string_builder = ''
     key_iterator = iter(my_dict)
     for i in range(depth):

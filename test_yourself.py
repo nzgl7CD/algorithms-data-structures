@@ -107,7 +107,7 @@ def myPow(x,n):
         return half_power * half_power
     else:
         return x * myPow(x,n-1)
-print(myPow(2,10))
+print(myPow(2,3))
 
 def minCostToMoveChips(position: list[int]) -> int:
     odds,pairs=0,0

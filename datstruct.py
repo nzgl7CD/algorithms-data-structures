@@ -86,8 +86,6 @@ orderlist=[ord(char.lower()) - ord('a') + 1 for char in s if char.isalpha()]
 
 # print(ord('5')-ord('0'))
 
-
-
 #Bits
 a = 10 #int 0b1010
 b = 3  #int 0b0011
@@ -112,18 +110,7 @@ a &= ~(1 << 2) # reverse the second bit to 0 = 0b1010
 
 is_set = (a & (1 << 1)) != 0
 a&=~(1) #makes any number pair
-
 a ^= b # reduce a with what only b has in bits 
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -6,5 +6,7 @@ def maxSubArray(nums: list[int]) -> int:
         current_max=max(i,current_max+i)
         final_max=max(final_max,current_max)
     return final_max
+
+
 print(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
     
