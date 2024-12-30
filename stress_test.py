@@ -36,7 +36,7 @@ summary = {
 print("Stress Test Summary:")
 
 for key, value in summary.items():
-    print(f"{key}: ${value:.2f}")
+    print(f"{key}: ${value:.1f}")
 
 # Optionally, save results to a CSV file
 stress_test_results.to_csv('stress_test_results.csv', index=False)

@@ -20,5 +20,5 @@ def countWays(n):
 
     return countWays(n - 1) + countWays(n - 2)
 
-n = 4
+n = 7
 print(countWays(n))

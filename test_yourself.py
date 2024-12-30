@@ -37,6 +37,13 @@ def reverse_list(head):
     head.next = None
 
     return rest
+
+def reversell(head):
+    if not head or not head.next: return head
+    rest=reversell(head.next)
+    head.next.next=head
+    head.next=None
+    return rest
     
 #pass
 def maxSubArray(nums: list[int]) -> int:
